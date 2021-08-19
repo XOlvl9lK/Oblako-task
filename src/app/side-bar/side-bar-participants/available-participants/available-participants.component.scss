@@ -1,0 +1,153 @@
+@import "../../../../variables";
+
+.available-participants {
+  h3 {
+    padding-left: 24px;
+    margin: 0;
+    color: $primaryBlack;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+}
+
+.participants__filters {
+  padding-left: 24px;
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: 193px 193px;
+  grid-template-rows: 57px 57px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  grid-gap: 8px;
+}
+
+.participants__search {
+  position: relative;
+
+  input {
+    border: none;
+    border-bottom: 1px solid $linesGray;
+    padding-bottom: 8px;
+    padding-left: 34px;
+    font-size: 12px;
+    line-height: 16px;
+    color: $primaryBlack;
+    font-weight: 500;
+    transition: .3s;
+    width: 146px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: content-box;
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $primaryBlue;
+    }
+  }
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 12%;
+  }
+
+  label {
+    position: absolute;
+    top: 7%;
+    left: 34px;
+    pointer-events: none;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: $placeholder;
+    transition: .3s;
+  }
+
+  input:focus + label, input:not(:placeholder-shown) + label {
+    transform: translateY(-16px);
+    color: $primaryBlue;
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+.filters_bottom {
+  padding-left: 24px;
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  height: 36px;
+
+  p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: $lightGray;
+  }
+}
+
+.reset {
+  margin-left: 40px;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    width: 12px;
+    height: 2px;
+    background-color: $lightGray;
+    display: block;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    transition: .3s;
+
+    &:first-child {
+      transform: rotate(45deg);
+    }
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+
+  p {
+    margin: 0 0 0 21.5px;
+    transition: .3s;
+    font-weight: 600;
+  }
+
+  &:hover {
+    p {
+      color: $secondaryRed;
+    }
+
+    span {
+      background-color: $secondaryRed;
+    }
+  }
+}
+
+.options {
+  display: flex;
+  margin-left: 34px;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 24px;
+  transition: .3s;
+
+  &:hover {
+    background-color: $buttonBackground;
+  }
+
+  p {
+    margin-left: 10px;
+    color: $primaryBlue;
+    font-weight: 600;
+  }
+}
+
+.users-list {
+  margin-top: 42px;
+  padding-left: 16px;
+  margin-bottom: 9px;
+}

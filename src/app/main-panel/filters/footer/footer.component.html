@@ -1,0 +1,23 @@
+<div class="filters__footer">
+  <div class="total">{{ total }} сессии</div>
+  <div class="change_filters" (click)="toggleEditFilter()" click-stop-propagation>
+    <img src="assets/icons/change-filters.png" alt="Change filters">
+    <p>Настроить фильтр</p>
+  </div>
+  <app-edit-filter
+    [top]="'120%'"
+    (emitter)="toggleEditFilter()"
+    *ngIf="isEditFilterShow"
+    [type]="'events'"
+    [options]="options"
+    [checkedHandler]="checkedHandler"
+    [@fadeInOut]
+  ></app-edit-filter>
+  <div class="reset" (click)="reset()">
+    <div class="cross">
+      <span></span>
+      <span></span>
+    </div>
+    <p>Сбросить</p>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="side-bar_wrap" (click)="toggleSideBar()">
+</div>
+  <div class="side-bar" >
+    <app-side-bar-header [currentTab]="currentTab" (switch)="switchTabs($event)"></app-side-bar-header>
+    <app-side-bar-body *ngIf="currentTab === 'main'"></app-side-bar-body>
+    <app-side-bar-participants *ngIf="currentTab === 'participants'"></app-side-bar-participants>
+  </div>
+
+
+

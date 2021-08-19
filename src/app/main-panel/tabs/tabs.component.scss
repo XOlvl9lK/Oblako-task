@@ -1,0 +1,56 @@
+@import "../../../variables";
+
+.main_panel__header {
+  height: 35px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);;
+  padding-left: 8px;
+}
+
+.main_panel__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  a {
+    margin: 10px 24px 8px 0;
+    color: $lightGray;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:visited {
+      color: $lightGray;
+    }
+
+
+  }
+
+  a.active {
+    color: $primaryBlack;
+    font-weight: 500;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $primaryBlue;
+      border-radius: 10px;
+    }
+  }
+
+  .tabs-active {
+
+  }
+}
+
+@media (max-width: 768px) {
+
+  .main_panel__header {
+    padding-left: 16px;
+  }
+}

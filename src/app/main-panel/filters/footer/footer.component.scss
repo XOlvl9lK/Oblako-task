@@ -1,0 +1,88 @@
+@import "../../../../variables";
+
+.filters__footer {
+  margin-top: 8px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.total {
+  font-size: 12px;
+  line-height: 16px;
+  color: $lightGray;
+}
+
+.change_filters {
+  position: relative;
+  margin-left: 74px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid white;
+  transition: .4s;
+  padding: 12px 18px;
+  border-radius: 24px;
+
+  &:hover {
+    background-color: $buttonBackground;
+  }
+
+  p {
+    color: $primaryBlue;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0 0 0 10px;
+  }
+}
+
+.reset {
+  margin-left: 22px;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    width: 12px;
+    height: 2px;
+    background-color: $lightGray;
+    display: block;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    transition: .3s;
+
+    &:first-child {
+      transform: rotate(45deg);
+    }
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+
+  p {
+    margin: 0 0 0 21.5px;
+    color: $lightGray;
+    font-size: 12px;
+    line-height: 16px;
+    transition: .3s;
+    font-weight: 600;
+  }
+
+  &:hover {
+    p {
+      color: $secondaryRed;
+    }
+
+    span {
+      background-color: $secondaryRed;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .filters__footer {
+    display: none;
+  }
+}

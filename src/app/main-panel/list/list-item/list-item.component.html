@@ -1,0 +1,23 @@
+<div [ngClass]="item.ended ? 'list_row ended' : 'list_row'">
+  <p class="firs-column">{{ date }}</p>
+  <p>{{ item.title }}</p>
+  <p>{{ item.totalMembers }}</p>
+  <p>{{ item.trainer }}</p>
+  <p>
+    <img src="assets/icons/progress.png" alt="progress">
+    {{ item.progress }}
+  </p>
+  <div class="context_menu" (click)="contextModalHandler()" click-stop-propagation>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <app-context-modal
+    *ngIf="isContextModalShow"
+    [item]="item"
+    [@fadeInOut]
+    (delete)="contextModalHandler()"
+    (edit)="contextModalHandler()"
+    click-stop-propagation
+  ></app-context-modal>
+</div>

@@ -1,0 +1,40 @@
+@import "../../../../variables";
+
+
+.current-participants {
+  width: 396px;
+  height: 100%;
+
+  h3 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 18px;
+    color: $primaryBlack;
+  }
+}
+
+.selected-participants {
+  margin-top: 26px;
+  height: 100%;
+}
+
+.drag-n-drop {
+  border: 1px dashed rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  width: 394px;
+  height: 517px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+
+  p {
+    margin-top: 24px;
+    color: $lightGray;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+  }
+}

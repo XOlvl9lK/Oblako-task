@@ -1,0 +1,37 @@
+
+<div class="date-picker__wrap" click-stop-propagation>
+  <img src="assets/icons/calendar.png" class="date-picker__calendar" alt="Calendar">
+  <input [id]="randomId" type="text" placeholder=" " (click)="toggleCalendarContainer()" [(ngModel)]="selectedDate" readonly>
+  <label [for]="randomId">Дата</label>
+  <img src="assets/icons/cross.png" class="date-picker__cross" alt="Cross" (click)="clearSelectedDay()">
+
+  <div *ngIf="isCalendarShow" class="calendar" [@fadeInOut]>
+    <div class="calendar__header">
+      <img class="arrow-left" src="assets/icons/arrowLeft.png" alt="Arrow" (click)="calendar.scrollMonths('left')">
+      <div class="current-month">
+        <p>
+          {{ calendar.currentMonth }}, <span>{{ calendar.currentYear }}</span>
+        </p>
+      </div>
+      <img class="arrow-right" src="assets/icons/arrowRight.png" alt="Arrow" (click)="calendar.scrollMonths('right')">
+    </div>
+
+    <div class="calendar__body">
+      <div class="days-of-week">
+        <p *ngFor="let day of calendar.dayMapAlias">
+          {{ day }}
+        </p>
+      </div>
+
+      <div class="days-of-months">
+        <p
+          *ngFor="let day of calendar.totalDays; let i = index" [ngClass]="checkIsToday() && day === today.date ? 'today' : ''"
+          (click)="!checkIsInactive(i, day) && setSelectedDay(day)"
+        >
+          <span [ngClass]="checkIsInactive(i, day) ? 'inactive' : ''">{{ day }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,8 @@
+<div class="trainer-list" >
+  <p
+    *ngFor="let trainer of (trainers$ | async)"
+    (click)="chose.emit(trainer.name)"
+  >
+    {{ trainer.name }}
+  </p>
+</div>

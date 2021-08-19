@@ -1,0 +1,135 @@
+@import "../../variables";
+
+header {
+  height: 152px;
+  left: 0;
+  top: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+
+}
+
+.status_bar {
+  display: none;
+}
+
+.scroll {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  justify-content: space-between;
+  padding: 0 44px 0 27px;
+  box-sizing: border-box;
+
+  h3 {
+    display: none;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.scroll__menu {
+  height: 12px;
+  width: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    background-color: $lightGray;
+    height: 2px;
+    width: 100%;
+    display: block;
+    transition: .3s;
+  }
+
+  &:hover {
+    span {
+      background-color: $primaryBlue;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.scroll__planning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .4s;
+  padding: 12px 18px;
+  border-radius: 24px;
+
+  &:hover {
+    background-color: $buttonBackground;
+  }
+
+  p {
+    color: $primaryBlue;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+  }
+
+  img {
+    margin-right: 12px;
+  }
+}
+
+.base {
+  p {
+    font-size: 16px;
+    color: $lightGray;
+    margin: 16px 0;
+  }
+}
+
+.base__planning {
+  display: flex;
+  align-items: center;
+
+  h2 {
+    font-size: 38px;
+    line-height: 40px;
+    margin: 0 0 0 19px;
+    color: $primaryBlack;
+  }
+}
+
+@media (max-width: 769px) {
+  header {
+    height: 44px;
+  }
+
+  .scroll {
+    margin: 0 19px 0 21px;
+    padding: 0;
+    height: 44px;
+    h3 {
+      display: block;
+    }
+  }
+
+  .scroll__planning {
+    p {
+      display: none;
+    }
+    img {
+      margin: 0;
+    }
+  }
+
+  .base {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .scroll__planning {
+    pointer-events: none;
+  }
+
+}

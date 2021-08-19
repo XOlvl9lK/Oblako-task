@@ -1,0 +1,165 @@
+@import "../../../../variables";
+
+
+.event {
+  margin-top: 26px;
+  margin-bottom: 8px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.event__title {
+  color: $lightGray;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.event__description {
+  display: flex;
+  align-items: center;
+  padding-bottom: 7px;
+  margin-top: 4px;
+  border-bottom: 1px solid $linesGray;
+  transition: .4s;
+
+  input {
+    border: none;
+    width: 400px;
+    color: transparent;
+    caret-color: black;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    position: absolute;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.event__description.active {
+  border-bottom: 1px solid $primaryBlue;
+}
+
+.event__name {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.38);
+  background-color: transparent;
+  left: 24px;
+  pointer-events: none;
+  z-index: 10;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.event__training {
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.pickers {
+  margin-top: 50px;
+  display: flex;
+  padding-left: 48px;
+}
+
+
+@mixin input-picker {
+  input {
+    border: none;
+    padding-left: 34px;
+    padding-bottom: 7px;
+    color: $primaryBlack;
+    border-bottom: 1px solid $linesGray;
+    transition: .3s;
+    user-select: none;
+    position: relative;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    width: 210px;
+
+    &:focus, &:not(:placeholder-shown), {
+      outline: none;
+      border-bottom: 1px solid $primaryBlue;
+    }
+
+    &:focus + label, &:not(:placeholder-shown) + label {
+      color: $primaryBlue;
+      font-size: 10px;
+      line-height: 12px;
+      transform: translateY(-16px);
+    }
+
+    &[readonly] {
+      background-color: transparent;
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 34px;
+    top: 15%;
+    color: $lightGray;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    transition: .3s;
+    pointer-events: none;
+  }
+}
+
+@mixin icon {
+  position: absolute;
+  top: 14%;
+  z-index: 100;
+}
+
+@mixin cross {
+  position: absolute;
+  right: 4.5px;
+  top: 25%;
+  cursor: pointer;
+}
+
+.time-picker {
+  position: relative;
+  margin-left: 16px;
+
+  @include input-picker;
+}
+
+.time-picker__clock {
+  @include icon
+}
+
+.time-picker__cross {
+  @include cross
+}
+
+.trainer-picker {
+  position: relative;
+  margin-left: 16px;
+
+  @include input-picker
+}
+
+.trainer-picker__avatar {
+  @include icon;
+  top: 12%;
+}
+
+.trainer-picker__cross {
+  @include cross;
+  top: 40%;
+}
+
+

@@ -1,0 +1,38 @@
+@import "../../../../variables";
+
+.context-modal {
+  width: 162px;
+  height: 72px;
+  padding: 8px 0;
+  z-index: 5;
+  background-color: white;
+  position: absolute;
+  right: 8px;
+  top: 0;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  transform: translateY(-90px);
+
+  div {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $linesGray;
+    }
+
+    img {
+      padding-left: 18px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      color: $primaryBlack;
+      padding-left: 18px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="select" click-stop-propagation [style.marginLeft]="marginLeft">
+  <h4 [ngClass]="isDropShow ? 'select__title select__title-active' : 'select__title'">{{ title }}</h4>
+  <div
+    class="select__input"
+    (click)="dropHandler()"
+    [ngClass]="isDropShow ? 'select__input select__input-active' : 'select__input'"
+    [style.width]="width"
+  >
+    <p>{{ currentState }}</p>
+    <img src="assets/icons/arrow.png" alt="arrow">
+  </div>
+  <app-drop-down
+    *ngIf="isDropShow"
+    [variants]="variants"
+    (select)="setCurrentState($event)"
+    [@fadeInOut]
+  >
+  </app-drop-down>
+</div>

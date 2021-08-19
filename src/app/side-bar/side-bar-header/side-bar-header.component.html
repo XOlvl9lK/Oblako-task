@@ -1,0 +1,11 @@
+<div class="side-bar__title">
+  <h2>Планирование</h2>
+  <div class="side-bar__buttons">
+    <img src="assets/icons/checkMark.png" alt="Check mark" class="check-mark" (click)="addNewEvent()">
+    <img src="assets/icons/cross.png" alt="Cross" (click)="toggleSideBar()">
+  </div>
+</div>
+<div class="side-bar__tabs">
+  <p [ngClass]="classSelect('main')" (click)="switch.emit('main')">Основное</p>
+  <p [ngClass]="classSelect('participants')" (click)="switch.emit('participants')">Участники</p>
+</div>

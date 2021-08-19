@@ -1,0 +1,6 @@
+<div class="variants">
+    <span
+      *ngFor="let variant of variants"
+      (click)="select.emit(variant)"
+    >{{ variant }}</span>
+</div>

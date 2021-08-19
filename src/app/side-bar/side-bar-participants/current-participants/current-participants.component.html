@@ -1,0 +1,15 @@
+<div class="current-participants">
+  <h3>Участники мероприятия</h3>
+  <div class="selected-participants" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="currentUsers">
+    <div class="drag-n-drop" *ngIf="currentUsers.length === 0">
+      <img src="assets/icons/dragNDrop.png" alt="DragNDrop">
+      <p>Наполните группу, перетаскивая участников <br>из списка доступных в левой колонке</p>
+    </div>
+    <app-user
+      *ngFor="let user of currentUsers"
+      [user]="user"
+      [paddingLeft]="'44px'"
+    ></app-user>
+  </div>
+</div>
+

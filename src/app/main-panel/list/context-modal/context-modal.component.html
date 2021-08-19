@@ -1,0 +1,10 @@
+<div class="context-modal">
+  <div (click)="editEvent(); edit.emit(item.id)">
+    <img src="assets/icons/pencil.png" alt="pencil">
+    <p>Редактировать</p>
+  </div>
+  <div (click)="deleteEvent(); delete.emit(item.id)">
+    <img src="assets/icons/bucket.png" alt="bucket">
+    <p>Удалить слот</p>
+  </div>
+</div>

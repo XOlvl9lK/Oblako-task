@@ -1,0 +1,43 @@
+<div class="side-bar__body">
+  <div class="select-program">
+    <p class="program">Программа</p>
+    <div class="selected">
+      <p>{{ title }}</p>
+      <img src="assets/icons/grayArrow.png" alt="Gray arrow">
+    </div>
+  </div>
+
+  <div class="events">
+    <h2>Мероприятие, дата и время проведения</h2>
+    <app-event [active]="true"></app-event>
+    <app-event [active]="false"></app-event>
+    <app-event [active]="false"></app-event>
+  </div>
+
+  <div class="conditions">
+    <h2>Условия записи по коду</h2>
+    <div class="radio-group">
+      <div class="radio">
+        <input checked name="condition" id="without-code" type="radio">
+        <label for="without-code">Не использовать код доступа</label>
+      </div>
+
+      <div class="radio">
+        <input name="condition" id="with-registration" type="radio">
+        <label for="with-registration">Требовать регистрацию</label>
+      </div>
+
+
+      <div class="radio">
+        <input name="condition" id="with-name" type="radio">
+        <label for="with-name">Запросить только имя и фамилию</label>
+      </div>
+
+
+      <div class="radio">
+        <input name="condition" id="without-all" type="radio">
+        <label for="without-all">Не требовать регистрацию, имя и фамилию</label>
+      </div>
+    </div>
+  </div>
+</div>

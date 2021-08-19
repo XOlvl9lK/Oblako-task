@@ -1,0 +1,32 @@
+<div class="event">
+  <p class="event__title">Мероприятие</p>
+  <div class="event__description" [ngClass]="checkDescription() ? 'active' : ''">
+    <input (change)="onTitleChange()" [id]="randomId + 'event name'" type="text" [(ngModel)]="eventName" (focus)="onFocus()" (blur)="onBlur()">
+    <p class="event__name">{{ eventName }}&#160;&#160;</p>
+    <p class="event__training">Тренинг</p>
+  </div>
+  <div class="pickers">
+    <app-date-picker [active]="active"></app-date-picker>
+
+    <div class="time-picker">
+      <img class="time-picker__clock" src="assets/icons/clock.png" alt="clock">
+      <input (change)="onTimeChange(chosenTime)" [id]="randomId + 'time'" type="text" placeholder=" " [(ngModel)]="chosenTime">
+      <label [for]="randomId + 'time'">Время</label>
+      <img src="assets/icons/cross.png" class="time-picker__cross" alt="Cross" (click)="clearTime()">
+    </div>
+
+    <div class="trainer-picker" click-stop-propagation>
+      <img class="trainer-picker__avatar" src="assets/icons/avatar.png" alt="avatar">
+      <input [id]="randomId + 'trainer'" type="text" placeholder=" " (click)="toggleTrainerList()" [(ngModel)]="chosenTrainer" readonly>
+      <label [for]="randomId + 'trainer'">Тренер</label>
+      <img src="assets/icons/arrow.png" class="trainer-picker__cross" alt="Cross" (click)="toggleTrainerList()">
+
+      <app-trainer-list
+        *ngIf="isTrainerListVisible"
+        [@fadeInOut]
+        (chose)="choseTrainer($event)"
+      >
+      </app-trainer-list>
+    </div>
+  </div>
+</div>

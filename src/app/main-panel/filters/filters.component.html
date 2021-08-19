@@ -1,0 +1,17 @@
+<div class="filters">
+  <div class="inputs">
+    <div class="search">
+      <img class="search_icon" src="assets/icons/search.png" alt="">
+      <input if="search" type="text" id="search" placeholder=" "/>
+      <label for="search">Поиск</label>
+      <img class="change_filters_gray" src="assets/icons/changeFiltersGray.png" alt="">
+    </div>
+
+    <app-select title="Программа" [variants]="programs" [marginLeft]="'30px'" [width]="'166px'"></app-select>
+    <app-select title="Период" [variants]="period" [marginLeft]="'30px'" [width]="'166px'"></app-select>
+    <app-select title="Статус" [variants]="status" [marginLeft]="'30px'" [width]="'166px'"></app-select>
+
+  </div>
+
+  <app-footer [total]="34"></app-footer>
+</div>

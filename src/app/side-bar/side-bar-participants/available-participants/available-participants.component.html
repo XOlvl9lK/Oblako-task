@@ -1,0 +1,49 @@
+<div class="available-participants">
+  <h3>Доступные участники</h3>
+  <div class="participants__filters">
+    <div class="participants__search">
+      <img src="assets/icons/search.png" alt="">
+      <input type="text" id="participants-search" placeholder=" "/>
+      <label for="participants-search">Поиск</label>
+    </div>
+
+    <app-select [title]="'Группа'" [variants]="groups" [marginLeft]="'0'" [width]="'182px'"></app-select>
+    <app-select [title]="'Должность'" [variants]="positions" [marginLeft]="'0'" [width]="'182px'"></app-select>
+    <app-select [title]="'Стаж'" [variants]="experience" [marginLeft]="'0'" [width]="'182px'"></app-select>
+  </div>
+
+  <div class="filters_bottom">
+    <p>{{ availableUsers.length }} пользователя</p>
+    <div class="options" (click)="toggleEditFilter()" click-stop-propagation>
+      <img src="assets/icons/change-filters.png" alt="">
+      <p>Настроить</p>
+    </div>
+    <app-edit-filter
+      (emitter)="toggleEditFilter()"
+      [top]="'390px'"
+      *ngIf="isEditFilterShow"
+      [type]="'users'"
+      [options]="options"
+      [additionalOptions]="additionalOptions"
+      [checkedHandler]="checkedHandler"
+      [@fadeInOut]
+    ></app-edit-filter>
+    <div class="reset">
+      <div class="cross">
+        <span></span>
+        <span></span>
+      </div>
+      <p>Сбросить</p>
+    </div>
+  </div>
+
+  <div class="users-list" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="availableUsers">
+    <app-user
+      *ngFor="let user of availableUsers"
+      [user]="user"
+      [paddingLeft]="'44px'"
+    ></app-user>
+  </div>
+</div>
+
+

@@ -1,0 +1,16 @@
+<div [style.top]="top" class="edit-filter" click-stop-propagation>
+  <div class="system-fields">
+    <p class="edit-filter__title">Системные поля</p>
+    <div *ngFor="let opt of options; let i = index" (click)="checkedHandler(i, 'opt')" class="fields">
+      <input [id]="opt.option" type="checkbox" [checked]="opt.checked">
+      <label [for]="opt.option">{{ opt.option }}</label>
+    </div>
+  </div>
+  <div *ngIf="type === 'users'" class="additional-fields">
+    <p class="edit-filter__title">Дополнительные поля</p>
+    <div *ngFor="let addOpt of additionalOptions; let i = index" (click)="checkedHandler(i, 'addOpt')" class="fields">
+      <input [id]="addOpt.option" type="checkbox" [checked]="addOpt.checked">
+      <label [for]="addOpt.option">{{ addOpt.option }}</label>
+    </div>
+  </div>
+</div>

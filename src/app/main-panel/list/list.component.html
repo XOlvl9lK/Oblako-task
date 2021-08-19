@@ -1,0 +1,12 @@
+<div class="list">
+  <div class="list__header list_row">
+    <p>Дата начала</p>
+    <p>Название</p>
+    <p class="members"><span>Участников</span> <span>Уч.</span></p>
+    <p>Тренер</p>
+    <p>Прогресс</p>
+  </div>
+
+
+  <app-list-item *ngFor="let event of (events$ | async)" [item]="event"></app-list-item>
+</div>

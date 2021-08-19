@@ -1,0 +1,96 @@
+@import "../../../../variables";
+
+.list_row {
+  display: grid;
+  grid-template-columns: minmax(90px, 110px) minmax(124px, 576px) minmax(34px, 136px) minmax(65px, 132px) minmax(65px, 90px);
+  align-items: center;
+  transition: .3s;
+  border-radius: 4px;
+  position: relative;
+  padding-left: 8px;
+
+  &:hover {
+    background-color: $linesGray;
+
+    .context_menu {
+      visibility: visible;
+    }
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: $primaryBlack;
+    display: flex;
+    align-items: center;
+    margin-right: 3px;
+
+    img {
+      margin-right: 7px;
+    }
+  }
+}
+
+.firs-column {
+
+}
+
+.ended {
+  p {
+    color: $lightGray;
+  }
+}
+
+.context_menu {
+  position: absolute;
+  right: 8px;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  visibility: hidden;
+  transition: background-color .4s;
+
+  &:hover {
+    background-color: $veryLightGray;
+  }
+
+  span {
+    width: 3px;
+    height: 3px;
+    display: block;
+    background-color: $primaryBlack;
+    border-radius: 50%;
+    margin-bottom: 2px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+@media (max-width: 770px) {
+  .list_row {
+    grid-template-columns: 102px minmax(134px, 576px) minmax(34px, 136px) minmax(51px, 90px);
+
+    p:nth-child(4) {
+      display: none;
+    }
+  }
+
+}
+
+
+@media (max-width: 590px) {
+  .list_row {
+    grid-template-columns: 102px 134px minmax(34px, 136px) minmax(51px, 90px);
+  }
+
+}

@@ -1,0 +1,51 @@
+@import "../../../variables";
+
+.side-bar__title {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 20px 0 24px;
+
+  h2 {
+    color: $primaryBlack;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+}
+
+.side-bar__buttons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.check-mark {
+  margin-right: 26px;
+}
+
+.side-bar__tabs {
+  display: flex;
+  align-items: center;
+  height: 37px;
+  border-bottom: 1px solid $linesGray;
+  padding-left: 24px;
+
+  p {
+    color: $lightGray;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 37px;
+    margin: 0 24px 0 0;
+    cursor: pointer;
+  }
+
+  &_active {
+    color: $primaryBlack;
+    border-bottom: 2px solid $primaryBlue;
+  }
+}
